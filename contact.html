@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="sk">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Kontakt | Ombiho svet a anime</title>
+  <meta name="description" content="Máte otázku alebo spätnú väzbu? Napíšte nám prostredníctvom kontaktného formulára." />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Topbar -->
+  <div class="topbar">
+    <div class="container">
+      <div class="topbar__left">
+        <span class="dot"></span>
+        <span>Čítate: Kontakt</span>
+      </div>
+      <div class="topbar__right">
+        <a href="about.html" class="link--ghost">O nás</a>
+        <a href="contact.html" class="link--ghost active">Kontakt</a>
+        <a href="privacy.html" class="link--ghost">Privacy</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container header__inner">
+      <a href="index.html" class="brand">
+        <span class="brand__logo">🍥</span>
+        <span class="brand__text">Ombiho svet a anime</span>
+      </a>
+    </div>
+  </header>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="container navbar__inner">
+      <a class="nav__link" href="index.html">Domov</a>
+      <a class="nav__link" href="about.html">O nás</a>
+      <a class="nav__link" href="reviews.html">Recenzie</a>
+      <a class="nav__link active" href="contact.html">Kontakt</a>
+    </div>
+  </nav>
+
+  <!-- Obsah -->
+  <main class="container article">
+    <article>
+
+      <h1>Kontakt</h1>
+
+      <p>
+        Máš otázku, návrh na článok, spätnú väzbu alebo len chceš pozdraviť? Kľudne sa ozvi. Radi čítame správy od čitateľov a fanúšikov anime kultúry.
+      </p>
+
+      <p>
+        Tento blog je nezávislý, nekomerčný a jeho cieľom je poskytovať voľnočasový obsah pre dospelých divákov a fanúšikov žánrovej tvorby. Ak si našiel niečo, čo ti vadí, alebo máš podnet, využite formulár nižšie.
+      </p>
+
+      <form class="cta__form" onsubmit="event.preventDefault(); alert('Ďakujeme za tvoju správu!');">
+        <input type="text" placeholder="Tvoje meno alebo prezývka" required />
+        <input type="email" placeholder="Tvoj e-mail (nepovinné)" />
+        <textarea placeholder="Napíš správu..." rows="5" required></textarea>
+        <button class="btn btn--primary" type="submit">Odoslať</button>
+      </form>
+
+      <p style="margin-top: 2em;">
+        Tento kontaktný formulár je anonymný. Nezbierame IP adresy ani osobné dáta. Neposkytujeme žiadny obsah na stiahnutie, všetko je iba textová publicistika.
+      </p>
+
+    </article>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer__bar">
+      <span class="tiny muted">© 2025 Ombiho svet a anime • Všetky práva vyhradené</span>
+    </div>
+  </footer>
+
+</body>
+</html>

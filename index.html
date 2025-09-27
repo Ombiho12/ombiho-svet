@@ -1,0 +1,491 @@
+<!doctype html>
+<html lang="sk">
+<head>
+  <!-- Meta základ -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="juicyads-site-verification" content="a221c2d4b2b0b88dbb44a815d90a4591">
+  <title>Ombiho svet a anime — Recenzie • Články • Kultúra</title>
+  <meta name="description" content="Moderný magazín o hentai a anime. Recenzie, články, sprievodcovia a popkultúra v čistom, prehľadnom rozhraní." />
+  <meta name="theme-color" content="#0b0c14" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='128' height='128'%3E%3Ctext x='12' y='92' font-size='96'%3E🍥%3C/text%3E%3C/svg%3E" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Ombiho svet a anime" />
+  <meta property="og:description" content="Recenzie, blog a magazín o anime v modernom dizajne." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://images.unsplash.com/photo-1518544887876-ef69c5fd6021?q=80&w=1600&auto=format&fit=crop" />
+  <meta property="og:url" content="https://tvojweb.neocities.org/" />
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Playfair+Display:wght@700&display=swap" rel="stylesheet" />
+  <!-- Styles -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!-- 🔞 NSFW Modal -->
+<div id="ageModal" style="position:fixed; top:0; left:0; width:100vw; height:100vh; background:#0b0c14; color:#fff; display:flex; flex-direction:column; align-items:center; justify-content:center; z-index:9999; padding:40px; font-family:'Inter', sans-serif; text-align:center;">
+  <div style="max-width:600px;">
+    <div style="font-size:64px;">🔞</div>
+    <h1 style="font-size:32px; margin:20px 0 10px;">Tento web je pre dospelých (18+)</h1>
+    <p style="font-size:18px; color:#ccc;">
+      Stránka <strong>Ombiho svet a anime</strong> obsahuje sexuálne explicitný obsah, recenzie hentai, obrázky a témy nevhodné pre mladistvých.
+    </p>
+    <p style="margin-top:10px;">Vstupom potvrdzuješ, že máš <strong>18 alebo viac rokov</strong>.</p>
+    <div style="margin-top:30px;">
+      <button onclick="enterSite()" style="background:#ff3399; color:white; border:none; padding:12px 28px; font-size:16px; border-radius:6px; cursor:pointer;">✔️ Áno, som dospelý – pokračovať</button>
+      <br /><br />
+      <a href="https://google.com" style="color:#aaa; font-size:14px;">❌ Nie, odísť preč</a>
+    </div>
+  </div>
+</div>
+
+<script>
+  function enterSite() {
+    document.getElementById('ageModal').style.display = 'none';
+    localStorage.setItem('nsfwConfirmed', 'true');
+  }
+
+  window.addEventListener('load', function () {
+    if (localStorage.getItem('nsfwConfirmed') === 'true') {
+      document.getElementById('ageModal').style.display = 'none';
+    }
+  });
+</script>
+<!-- 🔞 /NSFW Modal -->
+
+  <!-- Topbar (malý pás s infom) -->
+  <div class="topbar">
+    <div class="container">
+      <div class="topbar__left">
+        <span class="dot"></span>
+        <span>Nové: „Neon Anime Guide 2025“ – pozri sekciu Recenzie ✨</span>
+      </div>
+      <div class="topbar__right">
+        <a href="about.html" class="link--ghost">O nás</a>
+        <a href="contact.html" class="link--ghost">Kontakt</a>
+        <a href="privacy.html" class="link--ghost">Privacy</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Hlavný header s logom a vyhľadávaním -->
+  <header class="site-header">
+    <div class="container header__inner">
+      <a href="index.html" class="brand">
+        <span class="brand__logo" aria-hidden="true">🍥</span>
+        <span class="brand__text">Ombiho svet a anime</span>
+      </a>
+
+      <form class="search">
+        <input type="search" placeholder="Hľadať články, recenzie, témy…" aria-label="Hľadať" />
+        <button type="submit" class="btn btn--ghost" aria-label="Hľadať">🔎</button>
+      </form>
+
+      <button class="btn btn--ghost only-mobile" id="menuToggle" aria-label="Menu">
+        ☰
+      </button>
+    </div>
+  </header>
+
+  <!-- Navigácia -->
+  <nav class="navbar" id="navbar">
+    <div class="container navbar__inner">
+      <a class="nav__link active" href="index.html">Domov</a>
+      <a class="nav__link" href="about.html">O nás</a>
+      <a class="nav__link" href="reviews.html">Recenzie</a>
+      <a class="nav__link" href="#guides">Sprievodcovia</a>
+      <a class="nav__link" href="#latest">Najnovšie</a>
+      <a class="nav__link" href="contact.html">Kontakt</a>
+    </div>
+  </nav>
+
+  <!-- Hero sekcia (veľký banner) -->
+  <section class="hero">
+    <div class="hero__media">
+      <img src="https://i.redd.it/so1t0ca17hx31.png" alt="Neon Tokyo ulička" />
+      <div class="hero__overlay"></div>
+    </div>
+    <div class="container hero__content">
+      <h1 class="hero__title">Hentai članky 2025</h1>
+      <p class="hero__subtitle">Recenzie, články a popkultúrne súvislosti v jednom čistom rozhraní.</p>
+      <div class="hero__actions">
+        <a class="btn btn--primary" href="#latest">Pozrieť najnovšie</a>
+        <a class="btn btn--ghost" href="#reviews">Top recenzie</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured článok (veľká karta) -->
+  <section class="featured">
+    <div class="container">
+      <article class="featured__card">
+        <div class="featured__media">
+          <img src="https://img4.gelbooru.com//samples/c7/6a/sample_c76ad2872476c2658d6dcbf5abf6529c.jpg" alt="Featured anime cover" />
+        </div>
+        <div class="featured__body">
+          <div class="meta meta--compact">
+            <span class="badge">Recenzia</span>
+            <span class="sep">•</span>
+            <span>Publikované 19. september 2025</span>
+          </div>
+          <h2 class="featured__title">
+            <a href="post-1.html">Prečo je dakedy Hentai lepšie ako realita ??</a>
+          </h2>
+          <p class="featured__excerpt">
+            Niekedy máš chuť na niečo viac než len obyčajné porno. Niečo, kde sú prsia veľké ako galaxie, výstreky zázračné a moans tak realistické, že ťa donútia stiahnuť nohavice ešte skôr, než zapneš fullscreen. Vstúp do sveta hentai — najodvážnejšej formy animovaného fetišu.
+          </p>
+          <div class="featured__actions">
+            <a class="btn btn--primary" href="post-1.html">Čítať recenziu</a>
+            <a class="btn btn--ghost" href="#reviews">Ďalšie hodnotenia</a>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- Najnovšie články (mriežka) -->
+  <section id="latest" class="section">
+    <div class="container">
+      <div class="section__head">
+        <h2 class="section__title">Najnovšie články</h2>
+        <a class="link--ghost" href="posts.html">Zobraziť všetky →</a>
+      </div>
+
+      <div class="grid grid--cards">
+        <!-- Card 1 -->
+        <article class="card">
+          <a class="card__media" href="post-1.html" aria-label="Otvoriť článok">
+            <img src="https://img4.gelbooru.com//samples/c7/6a/sample_c76ad2872476c2658d6dcbf5abf6529c.jpg" alt="Anime prezentácia" />
+          </a>
+          <div class="card__body">
+            <div class="meta">
+              <span class="badge">Článok</span>
+              <span class="dot"></span>
+              <span>OMBI • 19.9.2025</span>
+            </div>
+            <h3 class="card__title">
+              <a href="post-1.html">Prečo je dakedy Hentai lepšie ako realita ??</a>
+            </h3>
+            <p class="card__excerpt">
+              Niekedy máš chuť na niečo viac než len obyčajné porno. Niečo, kde sú prsia veľké ako galaxie, výstreky zázračné a moans tak realistické, že ťa donútia stiahnuť nohavice ešte skôr, než zapneš fullscreen. Vstúp do sveta hentai — najodvážnejšej formy animovaného fetišu.
+            </p>
+            <a class="btn btn--ghost" href="post-1.html">Čítať ďalej</a>
+          </div>
+        </article>
+
+        <!-- Card 2 -->
+        <article class="card">
+          <a class="card__media" href="post-2.html">
+            <img src="https://konachan.com/jpeg/74633c4fed0a20aee50422a2f992fe06/Konachan.com%20-%20153681%20blush%20bra%20breast_grab%20breasts%20game_cg%20group%20gym_uniform%20mezameru_to_itoko_wo_mamoru_bishoujo_kenshi_ni_natteita%20navel%20nipples%20panties%20underwear%20yuri.jpg" alt="Neon mesto" />
+          </a>
+          <div class="card__body">
+            <div class="meta">
+              <span class="badge">Článok</span>
+              <span class="dot"></span>
+              <span>OMBI • 17.9.2025</span>
+            </div>
+            <h3 class="card__title">
+              <a href="post-2.html">Yuri Hentai — keď jedna nestačí</a>
+            </h3>
+            <p class="card__excerpt">
+              Dve nadržané anime dievčatá. Žiadni chlapi. Len jazyky, prsty, výkriky a kvapky, ktoré stekajú po stehnách v rytme stonania. Yuri hentai nie je len "lesbická verzia", je to zvlhčená oslava ženského tela očami slasti.
+            </p>
+            <a class="btn btn--ghost" href="post-2.html">Čítať ďalej</a>
+          </div>
+        </article>
+
+        <!-- Card 3 -->
+        <article class="card">
+          <a class="card__media" href="post-3.html">
+            <img src="https://m7.hentaiera.com/024/xhyol5tud0/2.jpg" alt="Otaku komunita" />
+          </a>
+          <div class="card__body">
+            <div class="meta">
+              <span class="badge">Článok</span>
+              <span class="dot"></span>
+              <span>OMBI • 15.9.2025</span>
+            </div>
+            <h3 class="card__title">
+              <a href="post-3.html">Futanari — keď dievča pretiahne dievča</a>
+            </h3>
+            <p class="card__excerpt">
+               Prsia, kundička a naložený vták. Futanari nie je pre slabé povahy — je to sex na steroidoch. Orgazmy vybuchujúce v dvoch telesných smeroch zároveň, tvrdé penisy medzi jemnými stehnami, výstreky tak silné, že z nich v hentai prší.
+            </p>
+            <a class="btn btn--ghost" href="post-3.html">Čítať ďalej</a>
+          </div>
+        </article>
+
+        <!-- Card 4 -->
+        <article class="card">
+          <a class="card__media" href="post-4.html">
+            <img src="https://cdn.truyen-hentai.com/everyone-sharing-her-1ht17?interlace=1&quality=90&type=webp&url=https%3A%2F%2Fi.redd.it%2F4ssjyxulwjze1.jpeg&width=920&sign=4KUS4WV-fJEOla84b3Q0illgw5zgkMGboezTz90hgJ8" alt="Anime sketch" />
+          </a>
+          <div class="card__body">
+            <div class="meta">
+              <span class="badge">Článok</span>
+              <span class="dot"></span>
+              <span>OMBI • 13.9.2025</span>
+            </div>
+            <h3 class="card__title">
+              <a href="post-4.html">Gangbang Hentai — keď je jedna málo pre všetkých</a>
+            </h3>
+            <p class="card__excerpt">
+              Je tam sama. Holá, držiac sa na všetkých štyroch, oči rozšírené, ústa pootvorené. A okolo nej — päť, šesť, desať chlapov. Všetci tvrdí, nadržaní, pripravení zaliať ju výstrekmi tak hlboko, že zabudne svoje meno. Vitaj vo svete gangbang hentai.
+            </p>
+            <a class="btn btn--ghost" href="post-4.html">Čítať ďalej</a>
+          </div>
+        </article>
+
+        <!-- Card 5 -->
+        <article class="card">
+          <a class="card__media" href="post-5.html">
+            <img src="https://storage.bhs.cloud.ovh.net/v1/AUTH_8d36ec6c0460400ca5d88d41cb6b9cd3/images/TAISON223X/407115/sample-99ce8b31b04c7_01FK1AWZBNC9GKFHPMPE03B8AE.jpg" alt="Manga knihy" />
+          </a>
+          <div class="card__body">
+            <div class="meta">
+              <span class="badge">Článok</span>
+              <span class="dot"></span>
+              <span>OMBI • 11.9.2025</span>
+            </div>
+            <h3 class="card__title">
+              <a href="post-5.html">Public Use Hentai — telo na verejné použitie</a>
+            </h3>
+            <p class="card__excerpt">
+              Predstav si: dievča stojí na pódiu. Nahá, priviazaná, nohy rozkročené. Publikum sleduje. Ona sa trasie, ale neodmieta. Pretože jej telo je pre všetkých. Ktokoľvek si môže prísť — strčiť do nej, urobiť sa, odísť. A ďalší. A ďalší. Toto je **public use hentai** — žáner, ktorý ti zohne fantáziu.
+            </p>
+            <a class="btn btn--ghost" href="post-5.html">Čítať ďalej</a>
+          </div>
+        </article>
+
+        <!-- Card 6 -->
+        <article class="card">
+          <a class="card__media" href="post-6.html">
+            <img src="https://preview.redd.it/i-loved-being-their-3hole-freeuse-gangbang-slut-v0-zejew8mbhaxc1.jpeg?width=640&crop=smart&auto=webp&s=3b0f044ba244916d7a4cb88a327fb18ba25554f0" alt="Tokyo crossing" />
+          </a>
+          <div class="card__body">
+            <div class="meta">
+              <span class="badge">Článok</span>
+              <span class="dot"></span>
+              <span>OMBI • 9.9.2025</span>
+            </div>
+            <h3 class="card__title">
+              <a href="post-6.html">Pregnant Gangbang — zaliata aj pred pôrodom</a>
+            </h3>
+            <p class="card__excerpt">
+              Nafúknuté brucho, napnuté prsia plné mlieka, krivka tela, čo prosí o viac. Tehotná a stále nadrbaná. A keď sa otvorí diera – či ústa, kundička alebo zadok – nasleduje fronta vtákov. Toto nie je romantické dojčenie. Toto je brutálny pregnant gangbang.
+            </p>
+            <a class="btn btn--ghost" href="post-6.html">Čítať ďalej</a>
+          </div>
+        </article>
+        
+        <!-- Card 7 -->
+        <article class="card">
+          <a class="card__media" href="post-7.html">
+            <img src="https://m6.hentaiera.com/020/pb29lu34m8/1.jpg" alt="Manga knihy" />
+          </a>
+          <div class="card__body">
+            <div class="meta">
+              <span class="badge">Článok</span>
+              <span class="dot"></span>
+              <span>OMBI • 11.9.2025</span>
+            </div>
+            <h3 class="card__title">
+              <a href="post-7.html">Nohavičkový fetiš — keď tenká látka vzruší viac než hole telo</a>
+            </h3>
+            <p class="card__excerpt">
+             Je to len tenká látka. Ale keď sú jej nohavičky napnuté cez kundičku, trochu vlhké, trochu priesvitné… tvoje fantázie horia. V hentaji sú nohavičky svätým grálom medzi zvedavosťou a úplnou skazenosťou. Jej nohavičky nie sú len bielizeň – sú to sliny, výstrek, a nadržané šepkanie v jednej scéne.
+            </p>
+            <a class="btn btn--ghost" href="post-5.html">Čítať ďalej</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Recenzie (ratingy s hviezdičkami) -->
+ <section id="reviews" class="section section--alt">
+  <div class="container">
+    <div class="section__head">
+      <h2 class="section__title">Najnovšie recenzie</h2>
+      <a class="link--ghost" href="reviews.html">Všetky recenzie →</a>
+    </div>
+
+    <div class="grid grid--reviews">
+
+      <article class="review">
+        <div class="review__head">
+          <h3>Prečo je dakedy Hentai lepšie ako realita ??</h3>
+          <div class="stars" aria-label="Hodnotenie: 4 z 5">
+            ★★★★☆
+          </div>
+        </div>
+        <p class="review__text">
+          Vizuálne rozmaznávanie a fetišový prehľad v jednom. Výborne napísané, no miestami viac šťavy než obsahu – čo ale fanúšikovia určite ocenia.
+        </p>
+        <a class="btn btn--ghost" href="post-1.html">Prečítať celú recenziu</a>
+      </article>
+
+      <article class="review">
+        <div class="review__head">
+          <h3>Yuri Hentai — keď jedna nestačí</h3>
+          <div class="stars" aria-label="Hodnotenie: 5 z 5">
+            ★★★★★
+          </div>
+        </div>
+        <p class="review__text">
+          Vizualita, slasť a ženská túžba prepojená v harmonickej vlhkej óde. Brutálne účinné, krásne naservírované.
+        </p>
+        <a class="btn btn--ghost" href="post-2.html">Prečítať recenziu</a>
+      </article>
+
+      <article class="review">
+        <div class="review__head">
+          <h3>Futanari — keď dievča pretiahne dievča</h3>
+          <div class="stars" aria-label="Hodnotenie: 5 z 5">
+            ★★★★★
+          </div>
+        </div>
+        <p class="review__text">
+          Symbióza nežnosti a brutálneho výstreku. Ak ťa nevzrušuje anime vták s prsiami, po tomto článku už bude.
+        </p>
+        <a class="btn btn--ghost" href="post-3.html">Prečítať recenziu</a>
+      </article>
+
+      <article class="review">
+        <div class="review__head">
+          <h3>Gangbang Hentai — keď je jedna málo pre všetkých</h3>
+          <div class="stars" aria-label="Hodnotenie: 5 z 5">
+            ★★★★★
+          </div>
+        </div>
+        <p class="review__text">
+          Hromadná akcia animovaná s chirurgickou presnosťou. Nehanebné, tvrdé, bez pauzy na dych. Masturbačná klasika.
+        </p>
+        <a class="btn btn--ghost" href="post-4.html">Prečítať recenziu</a>
+      </article>
+
+      <article class="review">
+        <div class="review__head">
+          <h3>Public Use — keď je dievča vlastníctvom sveta</h3>
+          <div class="stars" aria-label="Hodnotenie: 5 z 5">
+            ★★★★★
+          </div>
+        </div>
+        <p class="review__text">
+          Najtabuovejšia túžba oblečená do animácie. Brutálne sexy a psychologicky znepokojujúce — presne preto funguje.
+        </p>
+        <a class="btn btn--ghost" href="post-5.html">Prečítať recenziu</a>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- JuicyAds v3.0 -->
+<script type="text/javascript" data-cfasync="false" async src="https://poweredby.jads.co/js/jads.js"></script>
+<ins id="1102269" data-width="308" data-height="286"></ins>
+<script type="text/javascript" data-cfasync="false" async>(adsbyjuicy = window.adsbyjuicy || []).push({'adzone':1102269});</script>
+<!--JuicyAds END-->
+
+
+  <!-- Newsletter / CTA -->
+  <section class="cta">
+    <div class="container cta__inner">
+      <div class="cta__text">
+        <h2>Chceš dostávať nové články mailom?</h2>
+        <p>Žiadny spam, len kvalitný obsah raz za čas. Prihlás sa na odber.</p>
+      </div>
+      <form class="cta__form" onsubmit="event.preventDefault(); alert('Ďakujeme za prihlásenie!');">
+        <input type="email" placeholder="tvoj@email.sk" required />
+        <button class="btn btn--primary" type="submit">Prihlásiť sa</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer (viac stĺpcov) -->
+  <footer class="site-footer">
+    <div class="container footer__grid">
+      <div class="footer__col">
+        <div class="brand brand--footer">
+          <span class="brand__logo" aria-hidden="true">🍥</span>
+          <span class="brand__text">Ombiho svet a anime</span>
+        </div>
+        <p class="muted">
+          Magazín o anime kultúre. Recenzie, sprievodcovia a príbehy, ktoré držia komunitu pokope.
+        </p>
+      </div>
+
+      <div class="footer__col">
+        <h4>Navigácia</h4>
+        <ul class="list">
+          <li><a href="index.html">Domov</a></li>
+          <li><a href="about.html">O nás</a></li>
+          <li><a href="reviews.html">Recenzie</a></li>
+          <li><a href="contact.html">Kontakt</a></li>
+          <li><a href="privacy.html">Privacy</a></li>
+        </ul>
+      </div>
+
+      <div class="footer__col">
+        <h4>Témy</h4>
+        <ul class="list">
+          <li><a href="#latest">Najnovšie</a></li>
+          <li><a href="#guides">Sprievodcovia</a></li>
+          <li><a href="#reviews">Hodnotenia</a></li>
+        </ul>
+      </div>
+
+      <div class="footer__col">
+        <h4>Sleduj nás</h4>
+        <div class="socials">
+          <a class="social" href="#" aria-label="Instagram">IG</a>
+          <a class="social" href="#" aria-label="Twitter">X</a>
+          <a class="social" href="#" aria-label="YouTube">YT</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="container footer__bar">
+      <span class="tiny muted">© 2025 Ombiho svet a anime • Všetky práva vyhradené</span>
+      <button class="btn btn--ghost tiny" id="themeToggle" aria-label="Prepnúť tému">🌗 Tmavé/Svetlé</button>
+    </div>
+  </footer>
+
+  <!-- Skripty: mobilné menu + prepínač témy -->
+  <script>
+    (function(){
+      const nav = document.getElementById('navbar');
+      const menuToggle = document.getElementById('menuToggle');
+      if (menuToggle) {
+        menuToggle.addEventListener('click', function(){
+          nav.classList.toggle('navbar--open');
+        });
+      }
+
+      const themeToggle = document.getElementById('themeToggle');
+      const root = document.documentElement;
+      const LS_KEY = 'theme';
+      function applyTheme(mode){
+        if(mode === 'light'){ root.setAttribute('data-theme','light'); }
+        else { root.removeAttribute('data-theme'); }
+      }
+      try {
+        const saved = localStorage.getItem(LS_KEY);
+        if(saved) applyTheme(saved);
+      } catch(e){}
+
+      if(themeToggle){
+        themeToggle.addEventListener('click', function(){
+          const isLight = root.getAttribute('data-theme') === 'light';
+          const next = isLight ? 'dark' : 'light';
+          applyTheme(next);
+          try { localStorage.setItem(LS_KEY, next); } catch(e){}
+        });
+      }
+    })();
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,358 @@
+/* --------------------------
+   ZÁKLAD & TÉMA (dark/light)
+--------------------------- */
+:root{
+  --bg:#0b0c14;
+  --panel:#121420;
+  --panel-2:#171a27;
+  --text:#e8eaf6;
+  --muted:#a6aec7;
+  --line:rgba(255,255,255,.08);
+  --accent:#ff5bbb;
+  --accent-2:#6ee7ff;
+  --success:#22c55e;
+  --warning:#f59e0b;
+  --radius:18px;
+  --shadow:0 10px 30px rgba(0,0,0,.45);
+  --maxw:1200px;
+  --font:'Inter',system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+  --font-serif:'Playfair Display',Georgia,serif;
+}
+
+:root[data-theme="light"]{
+  --bg:#fbfbff;
+  --panel:#ffffff;
+  --panel-2:#f4f6ff;
+  --text:#1c2237;
+  --muted:#5a6177;
+  --line:rgba(0,0,0,.08);
+  --accent:#d946ef;
+  --accent-2:#06b6d4;
+  --shadow:0 8px 24px rgba(16,24,40,.08);
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--text);
+  font:16px/1.7 var(--font);
+}
+
+/* --------------------------
+   POMOCNÉ TRIEDY
+--------------------------- */
+.container{max-width:var(--maxw); margin:0 auto; padding:0 20px}
+.muted{color:var(--muted)}
+.tiny{font-size:12px}
+.sep{opacity:.6; margin:0 8px}
+.dot{display:inline-block; width:6px; height:6px; border-radius:50%; background:var(--accent); margin-right:8px}
+
+/* Odkazy & tlačidlá */
+a{color:var(--accent); text-decoration:none}
+a:hover{text-decoration:underline}
+.link--ghost{color:var(--muted)}
+.link--ghost:hover{color:var(--accent)}
+
+.btn{
+  display:inline-block;
+  padding:10px 16px;
+  border-radius:12px;
+  font-weight:700;
+  border:none;
+  cursor:pointer;
+  text-decoration:none;
+  transition:.2s ease;
+}
+.btn--primary{
+  background:linear-gradient(90deg,var(--accent),var(--accent-2));
+  color:#fff;
+  box-shadow:0 6px 20px rgba(255,91,187,.25);
+}
+.btn--primary:hover{transform:translateY(-1px); filter:brightness(1.05)}
+.btn--ghost{
+  background:transparent;
+  color:var(--text);
+  border:1px solid var(--line);
+}
+.btn--ghost:hover{border-color:var(--accent); color:var(--accent)}
+.only-mobile{display:none}
+
+/* Oddeľovače sekcií */
+.section{padding:48px 0}
+.section--alt{padding:48px 0; background:var(--panel-2)}
+.section__head{
+  display:flex; align-items:center; justify-content:space-between; gap:16px; margin-bottom:18px;
+}
+.section__title{
+  font-family:var(--font-serif); font-size:26px; margin:0; color:var(--text);
+}
+
+/* --------------------------
+   TOPBAR
+--------------------------- */
+.topbar{
+  background:var(--panel);
+  border-bottom:1px solid var(--line);
+  font-size:14px;
+  color:var(--muted);
+}
+.topbar .container{
+  display:flex; align-items:center; justify-content:space-between; gap:16px; padding:8px 20px;
+}
+.topbar__left{display:flex; align-items:center; gap:10px}
+
+/* --------------------------
+   HEADER + BRAND + SEARCH
+--------------------------- */
+.site-header{
+  background:var(--panel);
+  border-bottom:1px solid var(--line);
+  position:sticky; top:0; z-index:40;
+}
+.header__inner{
+  display:flex; align-items:center; gap:16px; padding:14px 0;
+}
+.brand{display:flex; align-items:center; gap:12px; color:var(--text); text-decoration:none; font-weight:800}
+.brand__logo{
+  width:36px; height:36px; display:grid; place-items:center;
+  border-radius:10px; background:linear-gradient(135deg,var(--accent),var(--accent-2)); color:#09101f;
+  box-shadow:0 6px 16px rgba(0,0,0,.25);
+}
+.brand__text{letter-spacing:.2px}
+
+.search{
+  margin-left:auto;
+  display:flex; gap:8px; align-items:center;
+}
+.search input{
+  width:260px; max-width:56vw;
+  padding:10px 12px; border-radius:10px; border:1px solid var(--line);
+  background:var(--panel-2); color:var(--text); outline:none;
+}
+.search input:focus{border-color:var(--accent)}
+
+/* --------------------------
+   NAVBAR
+--------------------------- */
+.navbar{
+  background:var(--panel);
+  border-bottom:1px solid var(--line);
+}
+.navbar__inner{
+  display:flex; gap:18px; padding:10px 0; overflow:auto;
+}
+.nav__link{
+  color:var(--text); padding:8px 10px; border-radius:10px; white-space:nowrap;
+}
+.nav__link:hover{background:var(--panel-2)}
+.nav__link.active{background:linear-gradient(90deg,rgba(255,91,187,.12),rgba(110,231,255,.12)); border:1px solid var(--line)}
+
+/* mobile menu */
+.navbar--open .navbar__inner{display:block}
+
+/* --------------------------
+   HERO
+--------------------------- */
+.hero{position:relative}
+.hero__media{position:relative; height:56vh; overflow:hidden}
+.hero__media img{width:100%; height:100%; object-fit:cover; filter:brightness(.55) saturate(1.1)}
+.hero__overlay{
+  position:absolute; inset:0;
+  background:radial-gradient(1200px 400px at 50% 110%, rgba(255,91,187,.35), transparent 60%),
+             linear-gradient(180deg, rgba(0,0,0,.0), rgba(0,0,0,.55));
+}
+.hero__content{
+  position:absolute; inset:0; display:grid; place-items:center; text-align:center; padding:20px;
+}
+.hero__title{
+  font-family: 'Inter', sans-serif;
+  font-size:40px; margin:0 0 8px; color:#fff; text-shadow:0 10px 40px rgba(0,0,0,.6);
+}
+.hero__subtitle{color:#dbeafe; margin-bottom:16px}
+.hero__actions{display:flex; gap:12px; justify-content:center}
+
+/* --------------------------
+   FEATURED
+--------------------------- */
+.featured{padding:34px 0}
+.featured__card{
+  display:grid; grid-template-columns:1.2fr 1fr; gap:22px;
+  background:var(--panel); border:1px solid var(--line); border-radius:var(--radius); overflow:hidden;
+  box-shadow:var(--shadow);
+}
+.featured__media img{width:100%; height:100%; object-fit:cover}
+.featured__body{padding:18px 18px}
+.meta{color:var(--muted); font-size:14px; display:flex; align-items:center; gap:10px; margin-bottom:10px}
+.meta--compact .badge{padding:2px 8px}
+.badge{
+  display:inline-block; font-size:12px; letter-spacing:.2px;
+  color:#0b0c14; background:linear-gradient(90deg,var(--accent),var(--accent-2));
+  padding:4px 10px; border-radius:999px; font-weight:800;
+}
+.badge--blue{background:linear-gradient(90deg,#60a5fa,#22d3ee); color:#0b0c14}
+.badge--green{background:linear-gradient(90deg,#34d399,#a3e635); color:#0b0c14}
+
+.featured__title{font-size:26px; margin:6px 0 10px}
+.featured__title a{color:var(--text); text-decoration:none}
+.featured__title a:hover{color:var(--accent)}
+.featured__excerpt{color:var(--muted); margin-bottom:14px}
+.featured__actions{display:flex; gap:10px}
+
+/* --------------------------
+   GRID KARTY (Najnovšie)
+--------------------------- */
+.grid{display:grid; gap:22px}
+.grid--cards{
+  grid-template-columns:repeat(3, 1fr);
+}
+.card{
+  background:var(--panel); border-radius:16px; border:1px solid var(--line);
+  overflow:hidden; box-shadow:var(--shadow); transition:transform .2s, box-shadow .2s;
+}
+.card:hover{transform:translateY(-6px); box-shadow:0 16px 40px rgba(0,0,0,.45)}
+.card__media img{width:100%; height:190px; object-fit:cover}
+.card__body{padding:16px}
+.card__title{font-size:18px; margin:4px 0 8px}
+.card__title a{color:var(--text); text-decoration:none}
+.card__title a:hover{color:var(--accent)}
+.card__excerpt{color:var(--muted); margin:0 0 12px}
+
+/* --------------------------
+   RECENZIE
+--------------------------- */
+.grid--reviews{
+  grid-template-columns:repeat(3,1fr);
+}
+.review{
+  background:var(--panel); border:1px solid var(--line); border-radius:16px; box-shadow:var(--shadow);
+  padding:18px;
+}
+.review__head{display:flex; align-items:center; justify-content:space-between; margin-bottom:8px}
+.review__head h3{margin:0}
+.stars{color:#FFD166; letter-spacing:1px; font-weight:700}
+.review__text{color:var(--muted); margin:0 0 12px}
+
+/* --------------------------
+   SPRIEVODCOVIA (mini karty)
+--------------------------- */
+.grid--guides{grid-template-columns:repeat(3,1fr)}
+.mini{
+  display:grid; grid-template-columns:130px 1fr; gap:12px;
+  background:var(--panel); border:1px solid var(--line); border-radius:16px; box-shadow:var(--shadow);
+  padding:12px;
+}
+.mini__media img{width:100%; height:100%; object-fit:cover; border-radius:10px}
+.mini__title{margin:2px 0 6px; font-size:18px}
+.mini__title a{color:var(--text); text-decoration:none}
+.mini__title a:hover{color:var(--accent)}
+.mini__excerpt{color:var(--muted); font-size:14px}
+.tags{display:flex; flex-wrap:wrap; gap:8px}
+.tag{
+  background:var(--panel); border:1px solid var(--line); color:var(--muted);
+  padding:6px 10px; border-radius:999px; font-size:13px; text-decoration:none;
+}
+.tag:hover{border-color:var(--accent); color:var(--accent)}
+
+/* --------------------------
+   CTA / NEWSLETTER
+--------------------------- */
+.cta{
+  padding:44px 0;
+  background:linear-gradient(180deg, rgba(255,91,187,.08), rgba(110,231,255,.08));
+  border-top:1px solid var(--line); border-bottom:1px solid var(--line);
+}
+.cta__inner{
+  display:grid; grid-template-columns:2fr 1.2fr; gap:18px; align-items:center;
+}
+.cta__text h2{margin:0 0 6px; font-family:var(--font-serif)}
+.cta__text p{color:var(--muted); margin:0}
+.cta__form{display:flex; gap:10px}
+.cta__form input{
+  flex:1; padding:12px 14px; border-radius:12px; border:1px solid var(--line);
+  background:var(--panel); color:var(--text); outline:none;
+}
+.cta__form input:focus{border-color:var(--accent)}
+
+/* --------------------------
+   FOOTER
+--------------------------- */
+.site-footer{
+  background:var(--panel);
+  border-top:1px solid var(--line);
+  margin-top:36px;
+}
+.footer__grid{
+  display:grid; gap:24px; grid-template-columns:2fr 1fr 1fr 1fr;
+  padding:26px 0;
+}
+.footer__col h4{margin:0 0 10px}
+.list{list-style:none; padding:0; margin:0}
+.list li{margin:6px 0}
+.list a{color:var(--text); text-decoration:none}
+.list a:hover{color:var(--accent)}
+.brand--footer .brand__logo{width:32px; height:32px; border-radius:8px}
+.socials{display:flex; gap:10px}
+.social{
+  display:inline-grid; place-items:center; width:34px; height:34px; border-radius:10px;
+  background:var(--panel-2); border:1px solid var(--line); color:var(--text);
+}
+.social:hover{border-color:var(--accent); color:var(--accent)}
+.footer__bar{
+  display:flex; align-items:center; justify-content:space-between; gap:12px;
+  padding:10px 0; border-top:1px solid var(--line);
+}
+
+/* --------------------------
+   MEDIA QUERIES (responzívne)
+--------------------------- */
+@media (max-width: 1024px){
+  .featured__card{grid-template-columns:1fr}
+  .grid--cards{grid-template-columns:repeat(2,1fr)}
+  .grid--reviews{grid-template-columns:repeat(2,1fr)}
+  .grid--guides{grid-template-columns:repeat(2,1fr)}
+  .cta__inner{grid-template-columns:1fr}
+}
+@media (max-width: 720px){
+  .only-mobile{display:inline-block}
+  .search{display:none}
+  .navbar__inner{display:none}
+  .navbar--open .navbar__inner{display:block; padding:10px 0}
+  .navbar__inner .nav__link{display:block; padding:10px 12px}
+
+  .hero__media{height:42vh}
+  .hero__title{font-size:30px}
+  .grid--cards{grid-template-columns:1fr}
+  .grid--reviews{grid-template-columns:1fr}
+  .grid--guides{grid-template-columns:1fr}
+  .mini{grid-template-columns:1fr}
+  .footer__grid{grid-template-columns:1fr 1fr}
+}
+@media (max-width: 420px){
+  .footer__grid{grid-template-columns:1fr}
+  .cta__form{flex-direction:column}
+}
+
+/* --------------------------
+   DROBNE DETAILY a HOVER efekty
+--------------------------- */
+.card__media, .featured__media{position:relative; overflow:hidden}
+.card__media img, .featured__media img{transform:scale(1); transition:transform .35s ease}
+.card:hover .card__media img{transform:scale(1.06)}
+.featured__card:hover .featured__media img{transform:scale(1.04)}
+
+.badge, .tag{transition:.2s}
+.review:hover, .mini:hover{transform:translateY(-2px)}
+.review, .mini{transition:transform .25s ease}
+
+/* --------------------------
+   PRINT (len pre istotu)
+--------------------------- */
+@media print{
+  .topbar, .navbar, .hero, .cta, .site-footer, .btn { display:none !important; }
+  .container{max-width:100%}
+  body{background:#fff; color:#000}
+  a{color:#000; text-decoration:underline}
+}
